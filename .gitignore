@@ -1,0 +1,38 @@
+#first we ignore everything
+*
+!.gitignore
+
+# un-ignore items directly in $HOME
+!.bashrc
+!.fzf.bash
+!.fzf.zsh
+!.p10k.zsh
+!.profile
+!.sh_aliases
+!.ssh/config
+!.Xdefaults
+!.zshrc
+
+# unignore things inside ~/.config 
+!/.config/
+!.config/fzf/
+!.config/fzf/*
+!.config/i3/
+!.config/i3/config
+!.config/i3status/
+!.config/i3status/config
+!.config/mpd/ 
+!.config/mpd/mpd.conf 
+!.config/ncmpcpp/
+!.config/ncmpcpp/bindings
+!.config/ncmpcpp/config 
+!.config/nvim
+!.config/picom.conf
+!.config/ranger/
+!.config/ranger/plugins/
+!.config/ranger/plugins/ranger_devicons
+!.config/ranger/commands.py
+!.config/ranger/rc.conf
+!.config/ranger/rifle.conf
+!.config/ranger/scope.sh
+
