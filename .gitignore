@@ -9,10 +9,13 @@
 !.p10k.zsh
 !.profile
 !.sh_aliases
-!.ssh/config
 !.Xdefaults
 !.zshrc
 !install_HOWTO.md
+
+# ssh config
+!.ssh/
+!.ssh/config
 
 # unignore things inside ~/.config 
 !/.config/
