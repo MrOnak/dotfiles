@@ -27,15 +27,16 @@ if [ -f ~/.sh_aliases ]; then
 fi
 
 # ssh agent
-ssh-add-key() {
-  echo "register SSH key password"
-  eval $(ssh-agent)
-  ssh-add ~/.ssh/mrOnak_at_github_2022
-}
-zle     -N            ssh-add-key
-bindkey -M emacs '^T' ssh-add-key
-bindkey -M vicmd '^T' ssh-add-key
-bindkey -M viins '^T' ssh-add-key
+eval $(ssh-agent) >/dev/null
+#ssh-add-key() {
+#  echo "register SSH key password"
+#  eval $(ssh-agent)
+#  ssh-add ~/.ssh/mrOnak_at_github_2022
+#}
+#zle     -N            ssh-add-key
+#bindkey -M emacs '^T' ssh-add-key
+#bindkey -M vicmd '^T' ssh-add-key
+#bindkey -M viins '^T' ssh-add-key
 
 # FZF
 #export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
