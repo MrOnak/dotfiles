@@ -12,6 +12,7 @@
 !.ssh/config
 !.Xdefaults
 !.zshrc
+!install_HOWTO.md
 
 # unignore things inside ~/.config 
 !/.config/
