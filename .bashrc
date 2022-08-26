@@ -120,13 +120,7 @@ if ! shopt -oq posix; then
 fi
 
 # ssh key
-_ssh_add_key() {
-  echo "register SSH key password"
-  eval $(ssh-agent -s)
-  ssh-add ~/.ssh/mrOnak_at_github_2022
-}
-
-bind -x '"\C-t": _ssh_add_key'
+eval $(ssh-agent -s)
 
 # fuzzy finder
 [ -f ~/.config/fzf/.fzf.bash ] && source ~/.config/fzf/.fzf.bash
@@ -135,7 +129,7 @@ export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --preview='hea
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.config/fzf.bash ] && source ~/.config/fzf.bash
 
 # git prompt integration from https://github.com/romkatv/gitstatus
 source ~/gitstatus/gitstatus.prompt.sh

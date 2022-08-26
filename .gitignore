@@ -4,8 +4,6 @@
 
 # un-ignore items directly in $HOME
 !.bashrc
-!.fzf.bash
-!.fzf.zsh
 !.profile
 !.sh_aliases
 !.Xdefaults
@@ -20,6 +18,8 @@
 !/.config/
 !.config/fzf/
 !.config/fzf/*
+!.config/fzf.bash
+!.config/fzf.zsh
 !.config/i3/
 !.config/i3/config
 !.config/i3status/
