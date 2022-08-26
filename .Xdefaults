@@ -9,7 +9,8 @@ URxvt.shading: 45
 ! other settings
 URxvt.geometry: 90x25+180+200
 URxvt.perl-lib: /home/dominique/.config/urxvt/
-URxvt.perl-ext-common: matcher,keyboard-select,resize-font
+!URxvt.perl-ext-common: matcher,keyboard-select,resize-font
+URxvt.perl-ext-common: matcher
 
 URxvt.cursorColor:magenta
 URxvt.scrollBar:False
@@ -19,16 +20,23 @@ URxvt.modifier: alt
 
 ! plugins
 !! resize-font
-URxvt.resize-font.smaller:  C-j
-URxvt.resize-font.bigger:   C-k
+!URxvt.resize-font.smaller:  C-j
+!URxvt.resize-font.bigger:   C-k
 
 !! open URL in browser
 URxvt.urlLauncher: chromium
 URxvt.matcher.button: 1
 
 !! keyboard select - not convinced this works
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
+!URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!URxvt.keysym.M-s: perl:keyboard-select:search
+
+! unbind these. I don't know what they do and they interfere with my nvim keybinds
+!URxvt.keysym.C-Left: command:\000
+!URxvt.keysym.C-Right: command:\000
+!URxvt.keysym.C-Top: command:\000
+!URxvt.keysym.C-Down: command:\000
+
 
 ! Colors
 URxvt*background: #000000
