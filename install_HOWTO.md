@@ -133,9 +133,8 @@ font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
 * `sudo apt install autoconf automake libtool libncurses libncurses5 dconf-editor apt-file`
 
 # CLI tools
-* `sudo apt install rxvt-unicode` - terminal emulator
-  * @TODO must include config ~/.Xdefaults here
-  * change `i3-sensible-terminal` to `rxvt-unicode` in ~/.config/i3/config
+* `sudo apt install kitty` - terminal emulator
+  * change `i3-sensible-terminal` to `kitty` in ~/.config/i3/config
 * `sudo apt install ncmpcpp mpd mpdris2 mpc` - console based media player 
   * comment-out wildmidi in /etc/mpd.conf, also see ~/.config/ncmpcpp/ and ~/.config/mpd/
   * add keybinds for media keys to ~/.config/i3/config

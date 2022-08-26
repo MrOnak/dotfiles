@@ -24,6 +24,8 @@
 !.config/i3/config
 !.config/i3status/
 !.config/i3status/config
+!.config/kitty/
+!.config/kitty/kitty.conf
 !.config/mpd/ 
 !.config/mpd/mpd.conf 
 !.config/ncmpcpp/

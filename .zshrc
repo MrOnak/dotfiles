@@ -18,7 +18,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
 unsetopt beep
-bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # load aliases
