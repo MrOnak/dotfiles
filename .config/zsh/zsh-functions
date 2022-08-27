@@ -1,0 +1,20 @@
+# commonly used functions to make .zshrc and other files more
+# legible
+#
+# shoutout to chris@machine on YT
+
+function zsh_add_file() {
+  [ -f "$1" ] && source "$1"
+}
+
+function zsh_add_plugin() {
+  PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+  if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
+    # for plugins
+    zsh_add_file "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+    zsh_add_file "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+  else
+    git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+  fi
+}
+

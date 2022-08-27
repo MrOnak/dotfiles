@@ -50,3 +50,6 @@
 !.config/zsh/
 !.config/zsh/.zlogout
 !.config/zsh/.zshrc
+!.config/zsh/zsh-functions
+!.config/zsh/zsh-aliases
+
