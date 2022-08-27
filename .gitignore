@@ -21,10 +21,12 @@
 !.config/fzf.zsh
 !.config/i3/
 !.config/i3/config
+!.config/i3/cheatsheet.md
 !.config/i3status/
 !.config/i3status/config
 !.config/kitty/
 !.config/kitty/kitty.conf
+!.config/kitty/cheatsheet.md
 !.config/mpd/ 
 !.config/mpd/mpd.conf 
 !.config/ncmpcpp/
@@ -39,5 +41,6 @@
 !.config/ranger/rc.conf
 !.config/ranger/rifle.conf
 !.config/ranger/scope.sh
+!.config/ranger/cheatsheet.md
 !.config/powerlevel10k
 !.config/p10k.zsh
