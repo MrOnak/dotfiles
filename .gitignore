@@ -17,6 +17,8 @@
 !/.config/
 !.config/fzf/
 !.config/fzf/*
+!.config/fzf/shell/
+!.config/fzf/shell/*
 !.config/fzf.bash
 !.config/fzf.zsh
 !.config/i3/
