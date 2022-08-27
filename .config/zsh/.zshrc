@@ -40,10 +40,10 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
-PROMPT_FGCOL='%F{250}'
-PROMPT_BGCOL='%K{233}'
-PROMPT='$PROMPT_BGCOL$PROMPT_FGCOL [%n@%m]%f %F{blue}%1~%f %(?.%F{green}.%F{red})%#%f %k '
-RPROMPT='$PROMPT_BGCOL $vcs_info_msg_0_ $PROMPT_FGCOL %T%f %k'
+PROMPT_FGCOL='%F{240}'
+PROMPT_BGCOL='%K{default}'
+PROMPT='$PROMPT_BGCOL$PROMPT_FGCOL [%n@%m]%f %F{blue}%1~%f %(?.%F{green}.%F{red})%#%f %k'
+RPROMPT='$PROMPT_BGCOL$vcs_info_msg_0_ $PROMPT_FGCOL %D{%H:%M}%f%k'
 
 zstyle ':vcs_info:git:*' formats '%F{green} %b%f'
 zstyle ':vcs_info:*' enable git
