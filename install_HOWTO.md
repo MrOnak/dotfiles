@@ -29,7 +29,8 @@ Host github_MrOnak
 * move .fzf files to .config (**or install dotfiles**)
   * `cp -r ~/.fzf/shell ~/.config/fzf/shell`
   * `cp -r ~/.fzf/bin ~/.config/fzf/bin`
-  * `mv ~/.fzf.bash ~/.config/fzf/.fzf.bash`
+  * `mv ~/.fzf.bash ~/.config/fzf/fzf.bash`
+  * `mv ~/.fzf.zsh ~/.config/fzf/fzf.zsh`
   * `rm -rf ~/.fzf`
   * change the keybind from Ctrl-t to Ctrl-f in ~/.config/fzf/shell/key-bindings.bash
 
@@ -62,7 +63,7 @@ See this: https://github.com/romkatv/gitstatus
 export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-[ -f ~/.config/fsf.bash ] && source ~/.config/fzf.bash
+[ -f ~/.config/fzf/fsf.bash ] && source ~/.config/fzf/fzf.bash
 ```
 
 ## switching to ZSH
@@ -74,18 +75,25 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 * add custom bits to .zshrc before powerlevel10k-theme is sourced:
 
 ```
-# load aliases
-[[ -f ~/.sh_aliases ]] && source ~/.sh_aliases
-
 # ssh agent
 eval $(ssh-agent)
+
+#load helper functions
+source $ZDOTDIR/zsh-functions
+
+# load aliases
+zsh_add_file "$ZDOTDIR/zsh_aliases"
+
+# load plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions" # https://github.com/zsh-users/zsh-autosuggestions
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting" # https://github.com/zsh-users/zsh-syntax-highlighting
 
 # FZF
 #export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
 export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-[ -f ~/.config/fzf.zsh ] && source ~/.config/fzf.zsh
+zsh_add_file "$HOME/.config/fzf/fzf.zsh"
 ```
 
 ## install kitty terminal emulator

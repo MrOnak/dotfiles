@@ -31,11 +31,15 @@ source $ZDOTDIR/zsh-functions
 # load aliases
 zsh_add_file "$ZDOTDIR/zsh-aliases"
 
+# load plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions" # https://github.com/zsh-users/zsh-autosuggestions
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting" # https://github.com/zsh-users/zsh-syntax-highlighting
+
 # FZF
 export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-zsh_add_file "$HOME/.config/fzf.zsh"
+zsh_add_file "$HOME/.config/fzf/fzf.zsh"
 
 # run 10kpowerlevel theme
 zsh_add_file "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme"
