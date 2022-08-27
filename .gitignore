@@ -6,7 +6,7 @@
 !.bashrc
 !.profile
 !.sh_aliases
-!.zshrc
+!.zshenv
 !install_HOWTO.md
 
 # ssh config
@@ -47,3 +47,6 @@
 !.config/ranger/cheatsheet.md
 !.config/powerlevel10k
 !.config/p10k.zsh
+!.config/zsh/
+!.config/zsh/.zlogout
+!.config/zsh/.zshrc

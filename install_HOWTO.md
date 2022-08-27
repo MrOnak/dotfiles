@@ -75,9 +75,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 ```
 # load aliases
-if [ -f ~/.sh_aliases ]; then
-    . ~/.sh_aliases
-fi
+[[ -f ~/.sh_aliases ]] && source ~/.sh_aliases
 
 # ssh agent
 eval $(ssh-agent)
