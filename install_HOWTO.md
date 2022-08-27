@@ -33,6 +33,14 @@ Host github_MrOnak
   * `rm -rf ~/.fzf`
   * change the keybind from Ctrl-t to Ctrl-f in ~/.config/fzf/shell/key-bindings.bash
 
+## nerd font 
+* download the recommended font for the powerlevel10k zsh theme. if the theme isn't used, you can use any font from nerdfonts.com
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf`
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf`
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf`
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf`
+* `fc-cache -fv`
+
 ## BASH
 
 ### add ssh-agent to .bashrc (**included in dotfiles**)
@@ -81,14 +89,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --e
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.config/fzf.zsh ] && source ~/.config/fzf.zsh
 ```
-
-## nerd font 
-* download the recommended for for the powerlevel10k zsh theme. if the theme isn't used, you can use any font from nerdfonts.com
-* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf`
-* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf`
-* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf`
-* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf`
-* `fc-cache -fv`
 
 ## install kitty terminal emulator
 * `sudo apt install kitty`
