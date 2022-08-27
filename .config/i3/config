@@ -223,6 +223,9 @@ for_window [class="Qalculate" instance="qalculate"] floating enable
 #custom keybinds
 bindsym $mod+Shift+Return exec "kitty ranger"
 bindsym $mod+Shift+v exec "kitty -e nvim"
+# my personal screenshot tool
+bindsym --release Print exec --no-startup-id screenshotter.sh area
+bindsym --release Ctrl+Print exec --no-startup-id screenshotter.sh window
 
 # mpc to control ncmpcpp media player (or mpd more precisely)
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle

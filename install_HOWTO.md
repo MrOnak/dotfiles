@@ -144,6 +144,10 @@ font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
   * add keybinds for media keys to ~/.config/i3/config
   * allow mpd to run as user: `systemctl --user enable mpd`
 
+## CLI screenshotter
+
+See https://github.com/MrOnak/i3_cli_screenshotter
+
 # i3 applications
 * chromium
   * chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
