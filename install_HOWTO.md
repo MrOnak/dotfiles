@@ -1,27 +1,14 @@
-## install FZF and configure
-* `sudo apt install fd-find`
-* `ln -s /usr/bin/fdfind /usr/bin/fd`
-* `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
-* `~/.fzf/install`
+# linux system installation hints
 
-* move .fzf files to .config
-* `cp -r ~/.fzf/shell ~/.config/fzf/shell`
-* `cp -r ~/.fzf/bin ~/.config/fzf/bin`
-* `mv ~/.fzf.bash ~/.config/fzf/.fzf.bash`
-* `rm -rf ~/.fzf`
+These are collected notes on installation and configuration of useful linux
+applications. This document referes to and is linked to my personal dotfiles
+and may not apply seamlessly to anyone but myself.
 
-* change the keybind from Ctrl-t to Ctrl-f in ~/.config/fzf/shell/key-bindings.bash
+# BASICS: libraries and tools
+* `sudo apt install autoconf automake libtool libncurses libncurses5 dconf-editor apt-file`
+* `sudo apt install w3m w3m-img`
 
-* adapt the ~/.bashrc
-```
-# fuzzy finder
-[ -f ~/.config/fzf/.fzf.bash ] && source ~/.config/fzf/.fzf.bash
-export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-```
-
-# SSH
+## SSH
 * `touch ~/.ssh/config`
 
 ```
@@ -33,9 +20,22 @@ Host github_MrOnak
   AddKeysToAgent yes
 ```
 
-# BASH
+## FZF fuzzy finder and configure
+* `sudo apt install fd-find`
+* `ln -s /usr/bin/fdfind /usr/bin/fd`
+* `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
+* `~/.fzf/install`
 
-## add ssh-agent to .bashrc
+* move .fzf files to .config (**or install dotfiles**)
+  * `cp -r ~/.fzf/shell ~/.config/fzf/shell`
+  * `cp -r ~/.fzf/bin ~/.config/fzf/bin`
+  * `mv ~/.fzf.bash ~/.config/fzf/.fzf.bash`
+  * `rm -rf ~/.fzf`
+  * change the keybind from Ctrl-t to Ctrl-f in ~/.config/fzf/shell/key-bindings.bash
+
+## BASH
+
+### add ssh-agent to .bashrc (**included in dotfiles**)
 ```
 eval $(ssh-agent -s)
 ```
@@ -43,63 +43,101 @@ eval $(ssh-agent -s)
 If you add `AddKeysToAgent yes` to a host in .ssh/config then the key is automatically
 added to ssh-agent after the first time you enter the password 
 
-## git status integration
+### bash-git status integration
 
 See this: https://github.com/romkatv/gitstatus
 
-# prerequisites for neovim 
-* `sudo apt install git unzip wget curl tar`
-* `sudo apt install ripgrep`
-* `sudo apt install python3 python3-pip`
-* `pip3 install --upgrade pynvim`
-* `sudo apt install nodejs npm`
-* `sudo npm cache clean -f`
-* `sudo npm install -g n`
-* `sudo n stable`
-* `sudo npm install -g neovim`
+### add FZF to ~/.bashrc (**included in dotfiles**)
+```
+# fuzzy finder
+[ -f ~/.config/fzf/.fzf.bash ] && source ~/.config/fzf/.fzf.bash
+export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.config/fsf.bash ] && source ~/.config/fzf.bash
+```
 
-# install nerd font
-* download the "hack" font .zip file from nerdfonts.com:
-* `wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip`
-* `unzip Hack.zip`
-* `mkdir ~/.fonts`
-* `mv *.ttf ~/.fonts`
+## switching to ZSH
+* `sudo apt install zsh`
+* `chsh -s $(which zsh)`
+
+### zsh theme and styling (**included in dotfiles**)
+* go to https://github.com/romkatv/powerlevel10k and follow instructions
+* add custom bits to .zshrc before powerlevel10k-theme is sourced:
+
+```
+# load aliases
+if [ -f ~/.sh_aliases ]; then
+    . ~/.sh_aliases
+fi
+
+# ssh agent
+eval $(ssh-agent)
+
+# FZF
+#export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
+export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.config/fzf.zsh ] && source ~/.config/fzf.zsh
+```
+
+## nerd font 
+* download the recommended for for the powerlevel10k zsh theme. if the theme isn't used, you can use any font from nerdfonts.com
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf`
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf`
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf`
+* `wget -P ~/.fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf`
 * `fc-cache -fv`
-* close all instances of the terminal and set custom font
 
-# neovim itself
-* `git clone https://github.com/MrOnak/neovim_cfg.git ~/.config/nvim`
-* `cd ~/.config/nvim`
-* `git checkout nerdfont`
-* `cd ~`
-* `sudo add-apt-repository ppa:neovim-ppa/stable`
-* `sudo apt update`
-* `sudo apt install neovim`
+## install kitty terminal emulator
+* `sudo apt install kitty`
 
-# install ranger file manager and addon dependencies
-* `suto apt install ranger atool unrar highlight mediainfo caca-utils kitty imagemagick w3m w3m-img`
+change `i3-sensible-terminal` in ~/.config/i3/config to `kitty`
 
+### configure kitty and use nerdfont (**included in dotfiles**)
+configuration file is in .configure/kitty/kitty.conf
+
+the kitty.conf is excellently documented, just look and see 
+
+I found setting these options to be beneficial
+```
+font_family        MesloLGS NF
+font_size          12
+
+cursor #ff00ff
+cursor_text_color #cccccc
+cursor_blink_interval 0
+
+enable_audio_bell yes
+```
+
+## install ranger file manager and addon dependencies
+* `sudo apt install ranger atool unrar highlight mediainfo caca-utils imagemagick `
+
+### ranger configuration (**included in dotfiles**)
 copy ranger config files to ~/.config
 * `ranger --copy-config=commands`
 * `ranger --copy-config=scope`
 * `ranger --copy-config=rifle`
 * `ranger --copy-config=rc`
 
-enable image preview powered by w3m
-`vi ~/.config/ranger/rc.conf`
-
-set parameter `set image_preview` to true
+enable image-preview powered by kitty terminal adapt the `~/.config/ranger/rc.conf`
+```
+set image_preview true
+set preview_images_method kitty
+```
 
 go through the whole file and change other things. 
 
 rc.conf is also the place to add / change keybinds
 
-## ranger plugins
-### devicons (relies on nerdfont)
+### ranger plugins (**included in dotfiles**)
+#### devicons (relies on nerdfont)
 * `git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons`
 * `echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf`
 
-### FZF integration
+#### ranger-FZF integration
 copy the "fzf integration" plugin to `~/.config/ranger/commands.py`
 
 add keybind to `~/.config/ranger.rc.conf`
@@ -110,12 +148,51 @@ find the `# Searching` block and add:
 
 `map <C-f> fzf_select`
 
-# aethetics in i3
+## NEOVIM
+### prerequisites 
+* `sudo apt install git unzip wget curl tar`
+* `sudo apt install ripgrep`
+* `sudo apt install python3 python3-pip`
+* `pip3 install --upgrade pynvim`
+* `sudo apt install nodejs npm`
+* `sudo npm cache clean -f`
+* `sudo npm install -g n`
+* `sudo n stable`
+* `sudo npm install -g neovim`
+
+### neovim itself
+* `git clone https://github.com/MrOnak/neovim_cfg.git ~/.config/nvim`
+* `cd ~/.config/nvim`
+* `git checkout nerdfont`
+* `cd ~`
+* `sudo add-apt-repository ppa:neovim-ppa/stable`
+* `sudo apt update`
+* `sudo apt install neovim`
+
+## ncmpcpp command-line media player
+* `sudo apt install ncmpcpp mpd mpdris2 mpc` - console based media player 
+  * comment-out wildmidi in /etc/mpd.conf, also see ~/.config/ncmpcpp/ and ~/.config/mpd/
+  * add keybinds for media keys to ~/.config/i3/config
+  * allow mpd to run as user: `systemctl --user enable mpd`
+
+## CLI screenshotter
+
+See https://github.com/MrOnak/i3_cli_screenshotter
+
+# i3wm graphical environment
+## i3 applications
+* chromium
+  * chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
+* `sudo apt install qalculate`
+  * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
+
+## aethetics in i3
 * `sudo apt install picom feh`
+
+### configure i3 (**included in dotfiles**)
 * `cp /usr/share/doc/picom/examples/picom.sample.conf ~/.config/picom.conf`
 * `vi ~/.config/i3/config`
 
-add these lines
 ```
 # picom for opacity and things (https://wiki.archlinux.org/title/Picom) 
 exec --no-startup-id picom --config ~/.config/picom.conf
@@ -130,56 +207,7 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/mars.jpg ~/Pictu
 add this to ~/.config/i3/config:
 
 ```
-font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
+font pango:MesloLGS NF, pango:Ubuntu Mono, pango:monospace 10
 ```
 
-# libraries and tools
-* `sudo apt install autoconf automake libtool libncurses libncurses5 dconf-editor apt-file`
 
-# CLI tools
-* `sudo apt install kitty` - terminal emulator
-  * change `i3-sensible-terminal` to `kitty` in ~/.config/i3/config
-* `sudo apt install ncmpcpp mpd mpdris2 mpc` - console based media player 
-  * comment-out wildmidi in /etc/mpd.conf, also see ~/.config/ncmpcpp/ and ~/.config/mpd/
-  * add keybinds for media keys to ~/.config/i3/config
-  * allow mpd to run as user: `systemctl --user enable mpd`
-
-## CLI screenshotter
-
-See https://github.com/MrOnak/i3_cli_screenshotter
-
-# i3 applications
-* chromium
-  * chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
-* `sudo apt install qalculate`
-  * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
-
-# switching to ZSH
-* `sudo apt install zsh`
-* go to https://github.com/romkatv/powerlevel10k and follow instructions
-* add custom bits to .zshrc before powerlevel10k-theme is sourced:
-
-```
-# load aliases
-if [ -f ~/.sh_aliases ]; then
-    . ~/.sh_aliases
-fi
-
-# ssh agent
-ssh-add-key() {
-  echo "register SSH key password"
-  eval $(ssh-agent)
-  ssh-add ~/.ssh/mrOnak_at_github_2022
-}
-zle     -N            ssh-add-key
-bindkey -M emacs '^T' ssh-add-key
-bindkey -M vicmd '^T' ssh-add-key
-bindkey -M viins '^T' ssh-add-key
-
-# FZF
-#export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
-export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-```

@@ -11,10 +11,6 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -208,6 +204,11 @@ workspace 6 output DP-1
 client.focused          #0e0e10 #0e0e10 #dddddd #2e9ef4   #0e0e10
 
 # eye candy
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:MesloLGS NF, pango:Ubuntu Mono, pango:monospace 10
+
 # picom for opacity and things (https://wiki.archlinux.org/title/Picom)
 exec --no-startup-id picom --config ~/.config/picom.conf
 # feh handles wallpapers (https://man.archlinux.org/man/feh.1)
