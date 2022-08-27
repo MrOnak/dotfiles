@@ -70,7 +70,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 * `sudo apt install zsh`
 * `chsh -s $(which zsh)`
 
-### zsh theme and styling (**included in dotfiles**)
+### zsh theme and styling
 * go to https://github.com/romkatv/powerlevel10k and follow instructions
 * add custom bits to .zshrc before powerlevel10k-theme is sourced:
 

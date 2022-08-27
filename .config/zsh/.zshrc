@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/dominique/.zshrc'
@@ -39,10 +32,19 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting" # https://github.com/zsh-user
 export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-zsh_add_file "$HOME/.config/fzf.zsh"
+zsh_add_file "$HOME/.config/fzf/fzf.zsh"
 
-# run 10kpowerlevel theme
-zsh_add_file "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme"
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/p10k.zsh.
-[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
+# custom prompt with git integration
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+PROMPT_FGCOL='%F{250}'
+PROMPT_BGCOL='%K{233}'
+PROMPT='$PROMPT_BGCOL$PROMPT_FGCOL [%n@%m]%f %F{blue}%1~%f %(?.%F{green}.%F{red})%#%f %k '
+RPROMPT='$PROMPT_BGCOL $vcs_info_msg_0_ $PROMPT_FGCOL %T%f %k'
+
+zstyle ':vcs_info:git:*' formats '%F{green} %b%f'
+zstyle ':vcs_info:*' enable git
 
