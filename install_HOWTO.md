@@ -30,18 +30,22 @@ Host github_MrOnak
   User git
   IdentityFile ~/.ssh/mrOnak_at_github_2022
   IdentitiesOnly yes
+  AddKeysToAgent yes
 ```
 
-* adapt .bashrc with keybind to register SSH password
-```
-_ssh_add_key() {
-  echo "register SSH key password"
-  eval $(ssh-agent -s)
-  ssh-add ~/.ssh/mrOnak_at_github_2022
-}
+# BASH
 
-bind -x '"\C-t": _ssh_add_key'
+## add ssh-agent to .bashrc
 ```
+eval $(ssh-agent -s)
+```
+
+If you add `AddKeysToAgent yes` to a host in .ssh/config then the key is automatically
+added to ssh-agent after the first time you enter the password 
+
+## git status integration
+
+See this: https://github.com/romkatv/gitstatus
 
 # prerequisites for neovim 
 * `sudo apt install git unzip wget curl tar`
