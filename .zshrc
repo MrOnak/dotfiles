@@ -17,6 +17,8 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
+setopt inc_append_history
+setopt share_history
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 
