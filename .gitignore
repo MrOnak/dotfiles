@@ -19,8 +19,8 @@
 !.config/fzf/*
 !.config/fzf/shell/
 !.config/fzf/shell/*
-!.config/fzf.bash
-!.config/fzf.zsh
+!.config/fzf/fzf.bash
+!.config/fzf/fzf.zsh
 !.config/i3/
 !.config/i3/config
 !.config/i3/cheatsheet.md
@@ -46,10 +46,10 @@
 !.config/ranger/scope.sh
 !.config/ranger/cheatsheet.md
 !.config/powerlevel10k
-!.config/p10k.zsh
 !.config/zsh/
 !.config/zsh/.zlogout
 !.config/zsh/.zshrc
 !.config/zsh/zsh-functions
 !.config/zsh/zsh-aliases
+!.config/zsh/p10k.zsh
 
