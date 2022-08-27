@@ -32,6 +32,7 @@
 !.config/mpd/ 
 !.config/mpd/mpd.conf 
 !.config/ncmpcpp/
+!.config/ncmpcpp/cheatsheet.md
 !.config/ncmpcpp/bindings
 !.config/ncmpcpp/config 
 !.config/nvim
