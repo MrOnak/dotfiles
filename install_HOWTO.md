@@ -192,6 +192,19 @@ See https://github.com/MrOnak/i3_cli_screenshotter
 * `sudo apt install qalculate`
   * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
 
+## screensaver
+* `sudo apt install xscreensaver`
+
+add these lines to `~/.config/i3/config`:
+
+```
+exec --no-startup-id xset s 300 300
+exec --no-startup-id xset dpms 300 600 900
+```
+
+This will turn screens black after 300 seconds, suspend the monitors after 600
+and switch them off after 900.
+
 ## aethetics in i3
 * `sudo apt install picom feh`
 
