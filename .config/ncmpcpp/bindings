@@ -153,8 +153,8 @@
 #def_key "@"
 #  show_server_info
 #
-#def_key "s"
-#  stop
+def_key "s"
+  stop
 #
 #def_key "p"
 #  pause
