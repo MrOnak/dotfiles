@@ -42,9 +42,9 @@ setopt prompt_subst
 
 PROMPT_FGCOL='%F{240}'
 PROMPT_BGCOL='%K{default}'
-PROMPT=$'\n$PROMPT_FGCOL%n @ %m%f %F{blue}%1~%f $vcs_info_msg_0_\n  %(?.%F{green}.%F{red})%#%f '
+PROMPT=$'\n$PROMPT_FGCOL╭ %n@%m%f %F{blue}%1~%f $vcs_info_msg_0_\n$PROMPT_FGCOL╰── %(?.%F{green}.%F{red})%#%f '
 #RPROMPT='$PROMPT_BGCOL$vcs_info_msg_0_ $PROMPT_FGCOL %D{%H:%M}%f%k'
-
+# border characters: ╭ ─ ╮ │ ╰ ╯
 zstyle ':vcs_info:git:*' formats '%F{green} %b%f'
 zstyle ':vcs_info:*' enable git
 
