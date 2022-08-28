@@ -49,7 +49,9 @@
 !.config/zsh/
 !.config/zsh/.zlogout
 !.config/zsh/.zshrc
-!.config/zsh/zsh-functions
 !.config/zsh/zsh-aliases
+!.config/zsh/zsh-functions
+!.config/zsh/zsh-keybinds
+!.config/zsh/zsh-vimode
 !.config/zsh/p10k.zsh
 
