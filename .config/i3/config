@@ -194,6 +194,10 @@ workspace 6 output DP-1
 #exec --no-startup-id i3-msg 'workspace 1; exec chromium; workspace 2; exec vlc; workspace 3; exec i3-sensible-terminal; workspace 4; exec nvim'
 exec --no-startup-id i3-msg 'workspace 2; exec kitty ncmpcpp; workspace 3; exec kitty ranger; workspace 4; exec kitty'
 
+# screensaver
+exec --no-startup-id xset s 300 300
+exec --no-startup-id xset dpms 300 600 900
+
 # change window colors
 #      class            border  backgr. text    indicator child_border
 client.focused          #0e0e10 #0e0e10 #dddddd #2e9ef4   #0e0e10
