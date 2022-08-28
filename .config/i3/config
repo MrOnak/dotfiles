@@ -202,7 +202,7 @@ client.focused          #0e0e10 #0e0e10 #dddddd #2e9ef4   #0e0e10
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:MesloLGS NF, pango:Ubuntu Mono, pango:monospace 10
+font pango:Hack Nerd Font, pango:Ubuntu Mono, pango:monospace 12
 
 # not that the font is registered, we can launch the i3 bar
 # Start i3bar to display a workspace bar (plus the system information i3status
