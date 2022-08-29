@@ -15,6 +15,9 @@ setopt share_history
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 
+# expand PATH to include local bin
+path+=("$HOME/.local/bin")
+
 # ssh agent
 eval $(ssh-agent) >/dev/null
 
