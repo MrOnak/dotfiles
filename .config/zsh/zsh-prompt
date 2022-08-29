@@ -1,0 +1,17 @@
+# custom prompt with git integration
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+# table of zsh 256 color codes: https://robotmoon.com/256-colors/
+FGC1='%F{234}'
+FGC2='%F{243}'
+BGC1='%K{234}'
+
+# border characters: ╭ ─ ╮ │ ┃ ╰ ╯     █            
+PROMPT=$'\n$FGC1%f$FGC2$BGC1 %n@%m%f %F{blue}%1~%f $vcs_info_msg_0_ %k$FGC1%f\n$FGC1 ╰─ %(?.%F{green}.%F{red})%#%f '
+#RPROMPT='$PROMPT_BGCOL$vcs_info_msg_0_ $PROMPT_FGCOL %D{%H:%M}%f%k'
+
+zstyle ':vcs_info:git:*' formats '%F{green} %b%f'
+zstyle ':vcs_info:*' enable git
