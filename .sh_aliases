@@ -1,4 +1,0 @@
-alias ll='ls -lha --color'
-alias ..='cd ..'
-alias vi='nvim'
-
