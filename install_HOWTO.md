@@ -120,6 +120,7 @@ enable_audio_bell yes
 
 ## install ranger file manager and addon dependencies
 * `sudo apt install ranger atool unrar highlight mediainfo caca-utils imagemagick `
+* `pip install pillow`
 
 ### ranger configuration (**included in dotfiles**)
 copy ranger config files to ~/.config
