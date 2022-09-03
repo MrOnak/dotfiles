@@ -7,8 +7,8 @@ _comp_options+=(globdots)
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE="$ZDOTDIR/.histfile"
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt autocd
 setopt inc_append_history
 setopt share_history
