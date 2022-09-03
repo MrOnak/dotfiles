@@ -24,4 +24,5 @@ user-dirs.locale
 zsh/.histfile
 zsh/.zcompdump
 zsh/plugins/*
+terminology/config/standard/base.cfg
 
