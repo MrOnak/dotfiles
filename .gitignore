@@ -26,3 +26,4 @@ zsh/.zcompdump
 zsh/plugins/*
 terminology/config/standard/base.cfg
 
+gh/hosts.yml
