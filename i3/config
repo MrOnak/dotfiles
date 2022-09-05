@@ -42,7 +42,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -192,7 +192,7 @@ workspace 6 output HDMI-1
 
 # auto-start applications on workspaces
 #exec --no-startup-id i3-msg 'workspace 1; exec chromium; workspace 2; exec vlc; workspace 3; exec i3-sensible-terminal; workspace 4; exec nvim'
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal -e ncmpcpp; workspace 3; exec i3-sensible-terminal -e ranger; workspace 4; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 2; exec urxvt -e ncmpcpp; workspace 3; exec urxvt -e ranger; workspace 4; exec urxvt'
 
 # screensaver
 exec --no-startup-id xset s 300 300
@@ -228,7 +228,7 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/mars.jpg ~/Pictu
 for_window [class="Qalculate" instance="qalculate"] floating enable
 
 #custom keybinds
-bindsym $mod+Shift+Return exec "i3-sensible-terminal -e ranger"
+bindsym $mod+Shift+Return exec "urxvt -e ranger"
 
 # my personal screenshot tool
 bindsym --release Print exec --no-startup-id ~/.local/bin/screenshotter.sh area
