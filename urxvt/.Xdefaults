@@ -8,19 +8,29 @@ URxvt.lineSpace: 0
 
 URxvt.geometry: 80x24 
 URxvt.internalBorder: 0
+URxvt.externalBorder: 0
 URxvt.buffered: true
 URxvt.transparent: false
 URxvt.tintColor: #000000
 URxvt.shading: 45
-URxvt.cursorBlink: false
-URxvt.cursorUnderline: false
-
 URxvt.saveLines: 10000
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
+
+!! the cursor
+URxvt.cursorColor: magenta
+URxvt.cursorColor2: white
+! the following two have no effect since I'm overriding the behaviour in ~/.config/zsh/zsh-vimode
+URxvt.cursorBlink: false
+URxvt.cursorUnderline: false
+
+!! mouse pointer
+URxvt.pointerColor: magenta
+URxvt.pointerBlank: true
+URxvt.pointerBlankDelay: 3
 
 !! URL handling
 URxvt.perl-lib: ~/.config/urxvt/
@@ -37,7 +47,6 @@ URxvt.keysym.Control-Right:  \033[1;5C
 !! Colorscheme
 URxvt*background: #000000
 URxvt*foreground: #B2B2B2
-URxvt.cursorColor: magenta
 ! black
 URxvt*color0:  #000000
 URxvt*color8:  #686868
