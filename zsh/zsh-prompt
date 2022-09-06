@@ -4,7 +4,7 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
-if [ $TERM = "xterm" ]; then
+if [[ $TERM == "xterm" || $TERM == "linux" ]]; then
   FGC1='%F{white}'
   FGC2='%F{default}'
   FGPATH='%F{cyan}'
