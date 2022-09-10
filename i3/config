@@ -192,7 +192,7 @@ workspace 6 output HDMI-1
 
 # auto-start applications on workspaces
 #exec --no-startup-id i3-msg 'workspace 1; exec chromium; workspace 2; exec vlc; workspace 3; exec i3-sensible-terminal; workspace 4; exec nvim'
-exec --no-startup-id i3-msg 'workspace 2; exec urxvt -e ncmpcpp; workspace 3; exec urxvt -e ranger; workspace 4; exec urxvt'
+exec --no-startup-id i3-msg 'workspace 2; exec urxvt -e ncmpcpp; workspace 3; exec urxvt; workspace 4; exec urxvt'
 
 # screensaver
 exec --no-startup-id xset s 300 300
