@@ -1,0 +1,21 @@
+# general settings are included
+source ~/.config/mutt/common.rc
+source ~/.config/mutt/appearance.rc
+
+# login data is encrypted
+source ~/.config/mutt/gpg.rc
+set crypt_autosign = yes
+set pgp_use_gpg_agent
+source "gpg -d ~/.config/mutt/dominique.stender_at_gmail.com.gpg |"
+
+# account specific settings 
+set from = "dominique.stender@gmail.com"
+set realname = "Dominique Stender"
+set imap_user = "dominique.stender@gmail.com"
+set smtp_url = "smtps://dominique.stender@smtp.gmail.com"
+# Remote Gmail folders
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"

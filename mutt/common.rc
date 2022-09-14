@@ -1,0 +1,14 @@
+# folders
+set header_cache = "~/.config/mutt/cache/headers"
+set message_cachedir = "~/.config/mutt/cache/bodies"
+set certificate_file = "~/.config/mutt/certificates"
+
+# general config
+set ssl_force_tls = yes
+set abort_nosubject = yes
+set mail_check = 120
+set timeout = 10
+set sort = "reverse-date-received"
+set copy = no
+
+
