@@ -2,6 +2,7 @@
 set header_cache = "~/.config/mutt/cache/headers"
 set message_cachedir = "~/.config/mutt/cache/bodies"
 set certificate_file = "~/.config/mutt/certificates"
+set mailcap_path = "~/.config/mutt/mutt_mailcap"
 
 # general config
 set ssl_force_tls = yes
@@ -11,4 +12,8 @@ set timeout = 10
 set sort = "reverse-date-received"
 set copy = no
 
-
+# taming html messages
+alternative_order text/plain text/enriched text/html
+auto_view text/html            # Automatically parse html messages through w3m
+auto_view text/x-vcard         # vcard attachments viewed through mutt.vcard.filter
+set implicit_autoview=yes      # Load in pager if setting in .mailcap says 'copiousoutput'.
