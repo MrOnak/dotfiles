@@ -12,6 +12,9 @@ ibus
 mimeapps.list
 monitors.xml
 mpd/database
+mutt/cache
+mutt/certificates
+mutt/*.gpg
 ncmpcpp/error.log
 orca.conf
 pulse
