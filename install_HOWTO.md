@@ -8,6 +8,9 @@ and may not apply seamlessly to anyone but myself.
 * `sudo apt install autoconf automake libtool libncurses libncurses5 dconf-editor apt-file`
 * `sudo apt install w3m w3m-img`
 
+## mouse support on TTY
+* `sudo apt install gpm`
+
 ## SSH
 * `touch ~/.ssh/config`
 
@@ -186,12 +189,43 @@ find the `# Searching` block and add:
 
 See https://github.com/MrOnak/i3_cli_screenshotter
 
+## Mutt as email client
+
+see: https://linuxconfig.org/how-to-install-configure-and-use-mutt-with-a-gmail-account-on-linux 
+this might also be good since it circumvents the app password generation: https://www.redhat.com/sysadmin/mutt-email-oauth2
+
+* `sudo apt install gpg mutt`
+* Configure gpg key:
+  * `gpg gen-key`
+* generate app password for gmail
+  * ...
+* config files
+* encrypt password file with gpg
+* set alias to read our own config file
+
+@TODO exted this
+
 # i3wm graphical environment
 ## i3 applications
 * chromium
   * chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
 * `sudo apt install qalculate`
   * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
+
+## luakit browser
+* `sudo apt install luakit`
+
+to register as default browser, launch command below and pick from list
+
+* `sudo update-alternatives --config x-www-browser`
+
+not sure this is needed for X/i3 but register a .desktop file
+
+* `wget -o ~/.local/share/applications/luakit.desktop https://raw.githubusercontent.com/luakit/luakit/develop/extras/luakit.desktop`
+* `update-desktop-database ~/.local/share/applications`
+
+
+*
 
 ## screensaver
 * `sudo apt install xscreensaver`

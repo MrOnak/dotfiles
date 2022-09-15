@@ -35,7 +35,7 @@ URxvt.pointerBlankDelay: 3
 !! URL handling
 URxvt.perl-lib: ~/.config/urxvt/
 URxvt.perl-ext-common: matcher
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: xdg-open 
 URxvt.matcher.button: 1
 
 !! fixing escape sequences for Ctrl-Cursor
