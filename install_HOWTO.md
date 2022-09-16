@@ -99,27 +99,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 zsh_add_file "$HOME/.config/fzf/fzf.zsh"
 ```
 
-## install kitty terminal emulator
-* `sudo apt install kitty`
-
-change `i3-sensible-terminal` in ~/.config/i3/config to `kitty`
-
-### configure kitty and use nerdfont (**included in dotfiles**)
-configuration file is in .configure/kitty/kitty.conf
-
-the kitty.conf is excellently documented, just look and see 
-
-I found setting these options to be beneficial
-```
-font_family        MesloLGS NF
-font_size          12
-
-cursor #ff00ff
-cursor_text_color #cccccc
-cursor_blink_interval 0
-
-enable_audio_bell yes
-```
+### install urxvt
+* `sudo apt install xrvt-unicode`
+* copy `~/.config/urxvt/.Xdefaults` to `~/.Xdefaults`
+* in `~/.config/i3/config` change `i3-sensible-terminal` to `urxvt` or use the default from github
 
 ## install ranger file manager and addon dependencies
 * `sudo apt install ranger atool unrar highlight mediainfo caca-utils imagemagick `
@@ -132,10 +115,11 @@ copy ranger config files to ~/.config
 * `ranger --copy-config=rifle`
 * `ranger --copy-config=rc`
 
-enable image-preview powered by kitty terminal adapt the `~/.config/ranger/rc.conf`
-```
-set image_preview true
-set preview_images_method kitty
+enable image-preview powered by w3m: adapt the `~/.config/ranger/rc.conf`
+``` 
+set preview_images_method w3m
+set w3m_delay 0.02
+set w3m_offset 0
 ```
 
 go through the whole file and change other things. 
@@ -197,23 +181,27 @@ this might also be good since it circumvents the app password generation: https:
 * `sudo apt install gpg mutt`
 * Configure gpg key:
   * `gpg gen-key`
+  * use the mail addres that you intend to access from Mutt
 * generate app password for gmail
-  * ...
-* config files
+  * go to [this address](https://security.google.com/settings/security/apppasswords) and set a password 
+  * put the password in a file `~/.config/mutt/account.pw` like so: \
+    ```
+      set smtp_pass = "<gmail app password>"
+      set imap_pass = "<gmail app password>"
+    ```
+* config files: *see dotfiles*
 * encrypt password file with gpg
-* set alias to read our own config file
+  * encrypt the file with gpg: `gpg --recipient "<email>" --encrypt account.pw`
+  * this will generate an `account.gpg` file. you can delete the `account.pw` file now
+  * include the `account.gpg` file into your mutt-account.rc like this: `source " gpg -d ~/path/to/account.gpg |"`
+  * Mutt will now prompt you for the gpg key password on launch
+* set shell alias to read our own config file, i.e. `alias mutt='mutt -F ~/.config/mutt/accountname.rc`
 
-@TODO exted this
+@TODO exted this for multiple accounts
 
 # i3wm graphical environment
-## i3 applications
-* chromium
-  * chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
-* `sudo apt install qalculate`
-  * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
-
 ## luakit browser
-* `sudo apt install luakit`
+* `sudo apt install luakit gstreamer1.0-plugins-bad`
 
 to register as default browser, launch command below and pick from list
 
@@ -223,9 +211,6 @@ not sure this is needed for X/i3 but register a .desktop file
 
 * `wget -o ~/.local/share/applications/luakit.desktop https://raw.githubusercontent.com/luakit/luakit/develop/extras/luakit.desktop`
 * `update-desktop-database ~/.local/share/applications`
-
-
-*
 
 ## screensaver
 * `sudo apt install xscreensaver`
@@ -261,7 +246,7 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/mars.jpg ~/Pictu
 add this to ~/.config/i3/config:
 
 ```
-font pango:MesloLGS NF, pango:Ubuntu Mono, pango:monospace 10
+font pango:Hack Nerd Font, pango:Ubuntu Mono, pango:monospace 10
 ```
 
 
