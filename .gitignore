@@ -12,8 +12,8 @@ ibus
 mimeapps.list
 monitors.xml
 mpd/database
-mutt/cache
 mutt/certificates
+mutt/account-*.rc
 mutt/*.gpg
 ncmpcpp/error.log
 orca.conf
