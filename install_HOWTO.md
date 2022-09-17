@@ -180,9 +180,10 @@ this might also be good since it circumvents the app password generation: https:
 
 * `sudo apt install gpg mutt`
 * Configure gpg key:
-  * `gpg gen-key`
+  * `gpg --generate-key`
   * use the mail addres that you intend to access from Mutt
 * generate app password for gmail
+  * Google app passwords only work with accounts that have 2-step verification active!
   * go to [this address](https://security.google.com/settings/security/apppasswords) and set a password 
   * put the password in a file `~/.config/mutt/account.pw` like so: \
     ```

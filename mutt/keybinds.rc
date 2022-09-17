@@ -1,0 +1,4 @@
+# common keybinds
+
+# my default IMAP mail fetching isn't bound, G is used for POP3
+bind index G imap-fetch-mail

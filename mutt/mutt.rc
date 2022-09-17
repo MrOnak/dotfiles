@@ -1,0 +1,28 @@
+# this is the main script
+#
+# it loads all common .rc files,
+# configures folder hooks and useful macros to switch accounts
+# and then sources the default account
+
+# general settings are included
+source ~/.config/mutt/common.rc
+source ~/.config/mutt/appearance.rc
+source ~/.config/mutt/keybinds.rc
+# source ~/.config/mutt/gmail.rc
+
+# configure folder hooks and macros for all accounts
+folder-hook 'account-main' 'source ~/.config/mutt/account-main.rc'
+folder-hook 'account-music' 'source ~/.config/mutt/account-music.rc'
+folder-hook 'account-gaming1' 'source ~/.config/mutt/account-gaming1.rc'
+folder-hook 'wohnungssuche.gmail.com' 'source ~/.config/mutt/wohnungssuche.gmail.com.rc'
+
+# load default account
+source '~/.config/mutt/account-main.rc'
+
+# account switching macros
+macro index <f2> '<sync-mailbox><enter-command>source ~/.config/mutt/account-main.rc<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.config/mutt/account-music.rc<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.config/mutt/account-gaming1.rc<enter><change-folder>!<enter>'
+macro index <f5> '<sync-mailbox><enter-command>source ~/.config/mutt/wohnungssuche.gmail.com.rc<enter><change-folder>!<enter>'
+
+

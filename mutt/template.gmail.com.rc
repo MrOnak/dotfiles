@@ -1,0 +1,17 @@
+# login data is encrypted
+source ~/.config/mutt/gpg.rc
+set crypt_autosign = yes
+set pgp_use_gpg_agent
+source "gpg -d ~/.config/mutt/template-pwd.gmail.com.gpg |"
+
+# account specific settings 
+set from = "mail.account@gmail.com"
+set realname = "Real Name"
+set imap_user = "mail.account@gmail.com"
+set smtp_url = "smtps://mail.account@smtp.gmail.com"
+# Remote Gmail folders
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"

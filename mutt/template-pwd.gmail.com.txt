@@ -1,0 +1,11 @@
+# requires 2-step verification on the gmail account
+#
+# 1. generate app-password here: https://security.google.com/settings/security/apppasswords
+# 2. replace <gmail app password> below with 16 letter password from website
+# 3. encrypt this file with gpg: gpg --recipient "<email>" --encrypt <filename>
+# 4. rename this file from *.txt.gpg to *.gpg
+# 5. verify its working and then remove the plain text *.txt file
+
+set smtp_pass = "<gmail app password>"
+set imap_pass = "<gmail app password>"
+
