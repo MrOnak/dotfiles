@@ -105,7 +105,8 @@ zsh_add_file "$HOME/.config/fzf/fzf.zsh"
 * in `~/.config/i3/config` change `i3-sensible-terminal` to `urxvt` or use the default from github
 
 ## install ranger file manager and addon dependencies
-* `sudo apt install ranger atool unrar highlight mediainfo caca-utils imagemagick `
+* `sudo apt install ranger`
+* install packages for previews: `sudo apt install atool unrar highlight mediainfo caca-utils imagemagick zathura`
 * `pip install pillow`
 
 ### ranger configuration (**included in dotfiles**)
@@ -199,6 +200,30 @@ this might also be good since it circumvents the app password generation: https:
 * set shell alias to read our own config file, i.e. `alias mutt='mutt -F ~/.config/mutt/accountname.rc`
 
 @TODO exted this for multiple accounts
+
+## mount Google Drive, NextCloud (...) as local share
+
+* `sudo apt install rclone`
+* set up new remote with `rclone config`
+
+### for NextCloud
+
+* chose WebDAV
+* URL is https://hostname.com/remote.php/webdav/
+* user/pass as per web login
+
+### mounting / unmounting
+
+* WebDAV: `rclone mount --daemon --vfs-cache-mode writes remote:dir /path/to/local/dir`
+  * the `--daemon` flag mounts it in background mode 
+  * the `--vfs-cache-mode` is pretty much required for normal file operations
+  * you can unmount normally: `umount /path/to/local/dir`
+
+## Google Drive
+
+* in `rclone config` chose `Google Drive`
+* get a Google Application Client Id [here](https://rclone.org/drive/#making-your-own-client-id)
+
 
 # i3wm graphical environment
 ## luakit browser
