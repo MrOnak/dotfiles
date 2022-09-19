@@ -9,6 +9,7 @@ gedit
 gnome-initial-setup-done
 gtk-3.0
 ibus
+libreoffice
 mimeapps.list
 monitors.xml
 mpd/database
@@ -21,6 +22,7 @@ pulse
 qalculate
 ranger/plugins/__init__.py
 ranger/plugins/__pycache__
+rclone
 systemd
 user-dirs.dirs
 user-dirs.locale
