@@ -4,7 +4,7 @@ alias vi='nvim'
 alias lsb='lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,MOUNTPOINTS,LABEL,UUID'
 
 # mounts for rclone
-alias rmountWD='rclone mount --daemon --vfs-cache-mode writes'
+alias rmountWD='rclone mount --daemon --vfs-cache-mode writes --password-command "pass rclone/config"'
 alias mountncd='rmountWD nc:Documents ~/Documents/NextCloud'
 alias mountncf='rmountWD nc:FamilyShare ~/Documents/FamilyShare'
 
