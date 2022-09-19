@@ -17,3 +17,15 @@ alternative_order text/plain text/enriched text/html
 auto_view text/html            # Automatically parse html messages through w3m
 auto_view text/x-vcard         # vcard attachments viewed through mutt.vcard.filter
 set implicit_autoview=yes      # Load in pager if setting in .mailcap says 'copiousoutput'.
+
+# no signing of emails
+set crypt_autosign = no
+set crypt_replysign = no
+set crypt_replysignencrypted = no
+set crypt_autopgp = no
+set crypt_autosmime = no
+
+# printing
+## the -o orientation-requested=3 makes sure the HP printer prints in portrait mode
+set print_command = "lp -o ColorModel=Gray -o media=A4 -o orientation-requested=3"
+
