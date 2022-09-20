@@ -14,7 +14,7 @@ source ~/.config/mutt/keybinds.rc
 folder-hook 'account-main' 'source ~/.config/mutt/account-main.rc'
 folder-hook 'account-music' 'source ~/.config/mutt/account-music.rc'
 folder-hook 'account-gaming1' 'source ~/.config/mutt/account-gaming1.rc'
-folder-hook 'wohnungssuche.gmail.com' 'source ~/.config/mutt/wohnungssuche.gmail.com.rc'
+folder-hook 'account-living' 'source ~/.config/mutt/account-living.rc'
 
 # load default account
 source '~/.config/mutt/account-main.rc'
@@ -23,6 +23,6 @@ source '~/.config/mutt/account-main.rc'
 macro index <f2> '<sync-mailbox><enter-command>source ~/.config/mutt/account-main.rc<enter><change-folder>!<enter>'
 macro index <f3> '<sync-mailbox><enter-command>source ~/.config/mutt/account-music.rc<enter><change-folder>!<enter>'
 macro index <f4> '<sync-mailbox><enter-command>source ~/.config/mutt/account-gaming1.rc<enter><change-folder>!<enter>'
-macro index <f5> '<sync-mailbox><enter-command>source ~/.config/mutt/wohnungssuche.gmail.com.rc<enter><change-folder>!<enter>'
+macro index <f5> '<sync-mailbox><enter-command>source ~/.config/mutt/account-living.rc<enter><change-folder>!<enter>'
 
 
