@@ -1,4 +1,5 @@
-alias ll='ls -lha --color'
+alias ll='ls -lh --color'
+alias la='ls -lha --color'
 alias ..='cd ..'
 alias vi='nvim'
 alias lsb='lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,MOUNTPOINTS,LABEL,UUID'
