@@ -1,0 +1,10 @@
+[nc]
+type = webdav
+vendor = nextcloud
+user = Dominique
+
+[google_drive_dst]
+type = drive
+scope = drive
+team_drive = 
+

@@ -22,6 +22,7 @@ pulse
 qalculate
 ranger/plugins/__init__.py
 ranger/plugins/__pycache__
+rclone/rclone.conf
 systemd
 user-dirs.dirs
 user-dirs.locale

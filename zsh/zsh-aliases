@@ -3,9 +3,10 @@ alias ..='cd ..'
 alias vi='nvim'
 alias lsb='lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,MOUNTPOINTS,LABEL,UUID'
 
-# mounts for rclone
-alias rmountNC='rclone mount --daemon --vfs-cache-mode writes \
-  --webdav-url=`pass Online/NextCloud/url` --webdav-pass=`pass Online/NextCloud/Dominique | rclone obscure -`'
+# mounts for rmount
+alias rmountMD='rclone mount --daemon --password-command="pass rclone/config" --vfs-cache-mode writes' 
+alias rmountNC='rmountMD --webdav-url=`pass Online/NextCloud/url` --webdav-pass=`pass Online/NextCloud/Dominique | rclone obscure -`'
 alias mountncd='rmountNC nc:Documents ~/Documents/NextCloud'
 alias mountncf='rmountNC nc:FamilyShare ~/Documents/FamilyShare'
-
+alias mountgdd='rmountMD --drive-client-id=`pass rclone/googledrive/dst/clientid` --drive-client-secret=`pass rclone/googledrive/dst/secret` \
+  google_drive_dst: ~/Documents/GoogleDrive/dominique'
