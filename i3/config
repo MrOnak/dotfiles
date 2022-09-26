@@ -231,8 +231,8 @@ for_window [class="Qalculate" instance="qalculate"] floating enable
 bindsym $mod+Shift+Return exec "urxvt -e ranger"
 
 # my personal screenshot tool
-bindsym --release Print exec --no-startup-id ~/.local/bin/screenshotter.sh area
-bindsym --release Ctrl+Print exec --no-startup-id ~/.local/bin/screenshotter.sh window
+bindsym --release Print exec --no-startup-id ~/.local/bin/screenshotter area
+bindsym --release Ctrl+Print exec --no-startup-id ~/.local/bin/screenshotter window
 
 # mpc to control ncmpcpp media player (or mpd more precisely)
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
