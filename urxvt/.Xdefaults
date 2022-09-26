@@ -1,74 +1,78 @@
 !! URxvt Appearance
-URxvt.font: xft:Hack Nerd Font Mono:style=Regular:size=13:antialias=true
-URxvt.boldFont: xft:Hack Nerd Font Mono:style=Bold:size=13:antialias=true
-URxvt.italicFont: xft:Hack Nerd Font Mono:style=Italic:size=13:antialias=true
-URxvt.boldItalicfont: xft:Hack Nerd Font Mono:style=Bold Italic:size=13:antialias=true
-URxvt.letterSpace: -1 
-URxvt.lineSpace: 0
+urxvt.font: xft:Hack Nerd Font Mono:style=Regular:size=13:antialias=true
+urxvt.boldFont: xft:Hack Nerd Font Mono:style=Bold:size=13:antialias=true
+urxvt.italicFont: xft:Hack Nerd Font Mono:style=Italic:size=13:antialias=true
+urxvt.boldItalicfont: xft:Hack Nerd Font Mono:style=Bold Italic:size=13:antialias=true
+urxvt.letterSpace: -1 
+urxvt.lineSpace: 0
 
-URxvt.geometry: 80x24 
-URxvt.internalBorder: 0
-URxvt.externalBorder: 0
-URxvt.buffered: true
-URxvt.transparent: false
-URxvt.tintColor: #000000
-URxvt.shading: 45
-URxvt.saveLines: 10000
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.urgentOnBell: true
-URxvt.depth: 32
-URxvt.iso14755: false
+!! real transparency using the composite manager
+urxvt.background: [50]#000000
+urxvt.depth: 32
+!! fake transparency
+!urxvt.transparent: true 
+!urxvt.shading: 45
+!! general settings
+urxvt.geometry: 80x24 
+urxvt.internalBorder: 0
+urxvt.externalBorder: 0
+urxvt.buffered: true
+urxvt.fading: 50
+urxvt.tintColor: #000000
+urxvt.saveLines: 10000
+urxvt.scrollBar: false
+urxvt.scrollBar_right: false
+urxvt.urgentOnBell: true
+urxvt.iso14755: false
 
 !! the cursor
-URxvt.cursorColor: magenta
-URxvt.cursorColor2: white
+urxvt.cursorColor: magenta
+urxvt.cursorColor2: white
 ! the following two have no effect since I'm overriding the behaviour in ~/.config/zsh/zsh-vimode
-URxvt.cursorBlink: false
-URxvt.cursorUnderline: false
+urxvt.cursorBlink: false
+urxvt.cursorUnderline: false
 
 !! mouse pointer
-URxvt.pointerColor: magenta
-URxvt.pointerBlank: true
-URxvt.pointerBlankDelay: 3
+urxvt.pointerColor: magenta
+urxvt.pointerBlank: true
+urxvt.pointerBlankDelay: 3
 
 !! URL handling
-URxvt.perl-lib: ~/.config/urxvt/
-URxvt.perl-ext-common: matcher
-URxvt.urlLauncher: xdg-open 
-URxvt.matcher.button: 1
+urxvt.perl-lib: ~/.config/urxvt/
+urxvt.perl-ext-common: matcher
+urxvt.urlLauncher: xdg-open 
+urxvt.matcher.button: 1
 
 !! fixing escape sequences for Ctrl-Cursor
-URxvt.keysym.Control-Up:     \033[1;5A
-URxvt.keysym.Control-Down:   \033[1;5B
-URxvt.keysym.Control-Left:   \033[1;5D
-URxvt.keysym.Control-Right:  \033[1;5C
+urxvt.keysym.Control-Up:     \033[1;5A
+urxvt.keysym.Control-Down:   \033[1;5B
+urxvt.keysym.Control-Left:   \033[1;5D
+urxvt.keysym.Control-Right:  \033[1;5C
 
 !! Colorscheme
-URxvt*background: [50]#000000
-URxvt*foreground: #B2B2B2
+urxvt.foreground: #B2B2B2
 ! black
-URxvt*color0:  #000000
-URxvt*color8:  #686868
+urxvt.color0:  #000000
+urxvt.color8:  #686868
 ! red
-URxvt*color1:  #B21818
-URxvt*color9:  #FF5454
+urxvt.color1:  #B21818
+urxvt.color9:  #FF5454
 ! green
-URxvt*color2:  #18B218
-URxvt*color10: #54FF54
+urxvt.color2:  #18B218
+urxvt.color10: #54FF54
 ! yellow
-URxvt*color3:  #B26818
-URxvt*color11: #FFFF54
+urxvt.color3:  #B26818
+urxvt.color11: #FFFF54
 ! blue
-URxvt*color4:  #1818B2
-URxvt*color12: #5454FF
+urxvt.color4:  #1818B2
+urxvt.color12: #5454FF
 ! purple
-URxvt*color5:  #B218B2
-URxvt*color13: #FF54FF
+urxvt.color5:  #B218B2
+urxvt.color13: #FF54FF
 ! cyan
-URxvt*color6:  #18B2B2
-URxvt*color14: #54FFFF
+urxvt.color6:  #18B2B2
+urxvt.color14: #54FFFF
 ! white
-URxvt*color7:  #B2B2B2
-URxvt*color15: #FFFFFF
+urxvt.color7:  #B2B2B2
+urxvt.color15: #FFFFFF
 
