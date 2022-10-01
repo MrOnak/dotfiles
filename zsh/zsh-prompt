@@ -12,6 +12,8 @@ if [[ $TERM == "xterm" || $TERM == "linux" ]]; then
   LEDGE=''
   REDGE=''
   VCSBRANCH=''
+  ADDSEP='%F{cyan}//%f'
+  ADDITION="        %D{%H:%M} $ADDSEP `~/.local/bin/rpi4_stats.zsh`"
 else
   # https://robotmoon.com/256-colors/
   FGC1='%F{234}'
@@ -21,11 +23,13 @@ else
   LEDGE="$FGC1%f"
   REDGE="$FGC1%f"
   VCSBRANCH=' '
+  ADDITION=''
 fi 
 
 # border characters: ╭ ─ ╮ │ ┃ ╰ ╯     █            
-PROMPT=$'\n$LEDGE$FGC2$BGC1 %n@%m%f $FGPATH%1~%f $vcs_info_msg_0_%k$REDGE\n$FGC1 ╰─ %(?.%F{green}.%F{red})%#%f '
+PROMPT=$'\n$LEDGE$FGC2$BGC1 %n@%m%f $FGPATH%1~%f $vcs_info_msg_0_%k$REDGE$ADDITION\n$FGC1 ╰─ %(?.%F{green}.%F{red})%#%f '
 #RPROMPT='$PROMPT_BGCOL$vcs_info_msg_0_ $PROMPT_FGCOL %D{%H:%M}%f%k'
+#RPROMPT='%D{%H:%M} `~/.local/bin/mem.sh` `~/.local/bin/cputemp.sh`  `~/.local/bin/diskstat.sh`'
 
 zstyle ':vcs_info:git:*' formats "%F{green}$VCSBRANCH%b %f"
 zstyle ':vcs_info:*' enable git
