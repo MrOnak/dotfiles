@@ -9,5 +9,4 @@ alias rmountMD='rclone mount --daemon --password-command="pass rclone/config" --
 alias rmountNC='rmountMD --webdav-url=`pass Online/NextCloud/url` --webdav-pass=`pass Online/NextCloud/Dominique | rclone obscure -`'
 alias mountncd='rmountNC nc:Documents /media/dominique/nextcloud/personal'
 alias mountncf='rmountNC nc:FamilyShare /media/dominique/nextcloud/family'
-alias mountgdd='rmountMD --drive-client-id=`pass rclone/googledrive/dst/clientid` --drive-client-secret=`pass rclone/googledrive/dst/secret` \
-  google_drive_dst: /media/dominique/googledrive/dst'
+alias mountgdd='rmountMD google_drive_dst: /media/dominique/googledrive/dst'
