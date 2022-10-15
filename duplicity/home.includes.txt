@@ -1,10 +1,7 @@
 - /home/dominique/.cache
 - /home/dominique/.local/Trash
 - /home/dominique/Downloads
-- /home/dominique/Music
-- /home/dominique/Pictures
 - /home/dominique/Videos
 - /home/dominique/tmp
-- **/.git
 /home/dominique/**
 - **
