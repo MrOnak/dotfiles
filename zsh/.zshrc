@@ -17,6 +17,7 @@ unsetopt beep
 
 # expand PATH to include local bin
 path+=("$HOME/.local/bin")
+path+=("$HOME/.local/share/gem/ruby/3.0.0/bin")
 
 # ssh agent
 eval $(ssh-agent) >/dev/null

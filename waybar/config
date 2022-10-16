@@ -31,7 +31,7 @@
         "cpu",
         "temperature",
         "memory",
-        "battery",                  // use for compliant batteries
+//        "battery",                  // use for compliant batteries
 //        "backlight",
         "idle_inhibitor",
         "pulseaudio",
