@@ -1,0 +1,5 @@
+- /root/.cache
+- /root/.local/Trash
+- /root/Downloads
+/root/**
+- **
