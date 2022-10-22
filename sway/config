@@ -96,8 +96,8 @@ set $opacity 0.9
 for_window [class=".*"] opacity $opacity
 
 input type:keyboard {
-  xkb_layout "de"
-  xkb_variant ,nodeadkeys
+  xkb_layout "de(nodeadkeys)"
+#  xkb_variant ,nodeadkeys
   repeat_delay 250
   repeat_rate 50
 }
