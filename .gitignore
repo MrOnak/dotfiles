@@ -1,9 +1,13 @@
+GIMP
 Kvantum
 SunVox
 autostart
 btop
+cataclysm-dda
 dconf
 fzf/*
+gcolor3
+gtk-2.0
 gtk-3.0
 gtk-4.0
 khal
@@ -28,6 +32,7 @@ ranger/plugins/__pycache__
 rclone/rclone.conf
 silver
 systemd
+unity3d
 user-dirs.dirs
 user-dirs.locale
 zsh/.histfile
