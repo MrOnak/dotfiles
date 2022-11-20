@@ -1,0 +1,8 @@
+/home/dominique/.cache
+/home/dominique/.local/Trash
+/home/dominique/Documents/synced
+/home/dominique/Downloads
+/home/dominique/Pictures/synced
+/home/dominique/Videos
+/home/dominique/tmp
+
