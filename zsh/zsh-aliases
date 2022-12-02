@@ -8,7 +8,6 @@ alias lsb='lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,MOUNTPOINTS,LABEL,UUID'
 alias rmountMD='rclone mount --daemon --password-command="pass rclone/config" --vfs-cache-mode writes' 
 alias rmountNC='rmountMD --webdav-url=`pass Online/NextCloud/url` --webdav-pass=`pass Online/NextCloud/Dominique | rclone obscure -`'
 alias mountncf='rmountNC nc:FamilyShare /mnt/dominique/nextcloud/family'
-alias mountgdd='rmountMD google_drive_dst: /mnt/dominique/googledrive/dst'
 
 # tools with less than ideal names
 alias irc='irssi'
