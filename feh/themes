@@ -1,2 +1,2 @@
 thumbs --thumbnails --thumb-width 300 --thumb-height 170 --fullscreen
-slides --auto-rotate --scale-down --image-bg=black --draw-filename --draw-tinted
+slides --scale-down --image-bg=black --draw-filename --draw-tinted

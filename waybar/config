@@ -26,6 +26,7 @@
         "sway/window"
     ],
     "modules-right": [
+        "custom/wireguard-manager",
         "network",
  //       "bluetooth",
         "cpu",
@@ -207,5 +208,16 @@
         },
         "exec": "scratchpad.sh",
         "on-click": "swaymsg 'scratchpad show'"
+    },
+    "custom/wireguard-manager": {
+        "interval": 3,
+        "return-type": "json",
+        "format-icons": {
+            "connected": "<span color=\"#009e05\">嬨 </span>",
+           "disconnected": "<span color=\"#ff5555\">嬨 </span>"
+        },
+        "on-click": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -t",
+        "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
+        "format": "{icon}"
     }
 }
